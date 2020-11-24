@@ -7,13 +7,13 @@ describe('Bhaskara', () => {
             bhaskara.calculateDelta(4, 2, -6).should.equal(100);
         })
         
-        it('results negative', () => {
-            bhaskara.calculateDelta(7, 3, 4).should.equal(-103);
-        })
-
         it('results zero', () => {
             bhaskara.calculateDelta(1, -10, 25).should.equal(0);
         })
+
+        it('results negative', () => {
+            bhaskara.calculateDelta(7, 3, 4).should.equal(-103);
+        })        
     })
 
     context('roots', () => {
@@ -25,4 +25,18 @@ describe('Bhaskara', () => {
             bhaskara.calculateRoot2(2, -10, 36).should.equal(1);
         })
     })        
+
+    context('bhaskara', () => {        
+        it('with 2 roots', () => {
+            bhaskara.calculateBhaskara(4, 2, -6).should.to.be.deep.equal({ root1: 1, root2: -1.5 });
+        })
+        
+        it('with 1 root', () => {
+            bhaskara.calculateBhaskara(1, -10, 25).should.to.be.deep.equal( { root1: 5 });
+        })
+
+        it('with 0 roots', () => {
+            bhaskara.calculateBhaskara(7, 3, 4).should.to.be.deep.equal({});
+        })
+    })  
 })
