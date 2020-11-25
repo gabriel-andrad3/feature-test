@@ -16,15 +16,15 @@ function calculateBhaskara(a, b, c) {
     if (delta > 0) {
         const root1 = calculateRoot1(a, b, delta);
         const root2 = calculateRoot2(a, b, delta);
-        return { root1, root2 };
+        return [ root1, root2 ];
     }
     else {
         if (delta == 0) {
             const root1 = calculateRoot1(a, b, delta);
-            return { root1 };
+            return [ root1 ];
         }
         else
-            return {};
+            return [];
     }
 }
 
